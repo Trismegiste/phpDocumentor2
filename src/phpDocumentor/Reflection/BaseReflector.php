@@ -131,7 +131,7 @@ abstract class BaseReflector extends ReflectionAbstract
     public function getName()
     {
         if (isset($this->node->namespacedName)) {
-            return '\\'.implode('\\', $this->node->namespacedName->parts);
+            return implode('\\', $this->node->namespacedName->parts);
         }
 
         return $this->getShortName();

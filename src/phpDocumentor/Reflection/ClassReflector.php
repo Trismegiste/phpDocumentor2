@@ -75,7 +75,7 @@ class ClassReflector extends InterfaceReflector
 
     public function getParentClass()
     {
-        return $this->node->extends ? '\\'.(string)$this->node->extends : '';
+        return $this->node->extends ? (string)$this->node->extends : '';
     }
 
     /**
@@ -87,7 +87,7 @@ class ClassReflector extends InterfaceReflector
         if ($this->node->implements) {
             /** @var \PHPParser_Node_Name */
             foreach ($this->node->implements as $node) {
-                $names[] = '\\'.(string)$node;
+                $names[] = (string)$node;
             }
         }
         return $names;
